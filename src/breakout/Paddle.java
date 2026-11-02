@@ -8,15 +8,16 @@ import edu.macalester.graphics.Rectangle;
  */
 public class Paddle {
 
-    public static final int PADDLE_WIDTH = 100;
-    public static final int PADDLE_HEIGHT = 8;
-    public static final double PADDLE_Y = BreakoutGame.CANVAS_HEIGHT * 0.8;
+    private final int PADDLE_WIDTH = 100;
+    private final int PADDLE_HEIGHT = 8;
+    private final double PADDLE_Y;
     private Rectangle paddle;
     
     /**
      * Constructs a paddle centered on the centerX position.
      */
-    public Paddle(double centerX) {
+    public Paddle(double centerX, double centerY) {
+        PADDLE_Y = centerY;
         paddle = new Rectangle(centerX, PADDLE_Y, PADDLE_WIDTH, PADDLE_HEIGHT);
         paddle.setFillColor(Ball.BALL_COLOR);
         paddle.setStrokeColor(Ball.OUTLINE_COLOR);
@@ -38,6 +39,10 @@ public class Paddle {
 
     public double getCenterY() {
         return PADDLE_Y + paddle.getHeight() / 2 + paddle.getWidth() / 2;
+    }
+
+    public double getY() {
+        return PADDLE_Y;
     }
     
     /**

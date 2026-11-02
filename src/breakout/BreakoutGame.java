@@ -21,8 +21,8 @@ import java.util.Random;
  */
 public class BreakoutGame {
 
-    public static final int CANVAS_WIDTH = 600;
-    public static final int CANVAS_HEIGHT = 800;
+    public final int CANVAS_WIDTH = 600;
+    public final int CANVAS_HEIGHT = 800;
     private final Color TEXT_COLOR = new Color(66, 66, 66, 255);
     private final Color BACKGROUND_COLOR = new Color(255, 222, 254, 255);
     private double speedAmplifier = 0.0375;
@@ -181,7 +181,7 @@ public class BreakoutGame {
     }
 
     private void createPaddle() {
-        paddle = new Paddle((CANVAS_WIDTH / 2) - 25);
+        paddle = new Paddle((CANVAS_WIDTH / 2) - 25, CANVAS_HEIGHT * 0.8);
         paddle.addToCanvas(canvas);
     }
 

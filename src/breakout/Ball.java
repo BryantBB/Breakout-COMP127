@@ -116,7 +116,7 @@ public class Ball {
         || canvas.getElementAt(getCenterX() - BALL_RADIUS, getCenterY() + BALL_RADIUS) == paddle.getPaddle()
         || canvas.getElementAt(getCenterX() + BALL_RADIUS, getCenterY() + BALL_RADIUS) == paddle.getPaddle()) {
             // This if statement prevents the collition from being detected inside the paddle.
-            if (getCenterY() + BALL_RADIUS > Paddle.PADDLE_Y + Paddle.PADDLE_WIDTH / 2) {
+            if (getCenterY() + BALL_RADIUS > paddle.getY() + paddle.getY() / 2) {
             }
             else {
                 // This if statement prevents the ball from going downward.
